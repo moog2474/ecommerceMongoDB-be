@@ -1,0 +1,20 @@
+###
+POST http://localhost:8000/api/menu
+Content-Type: application/json
+
+{
+    "menuName": "Contact",
+    "link": "/link",
+    "position" : 0
+}
+
+###
+GET http://localhost:8000/api/menu
+
+###
+PUT http://localhost:8000/api/menu
+
+###
+DELETE http://localhost:8000/api/menu/2cba9a3b-7b90-4cdc-8f4a-cd8cf0b7c448
+
+
