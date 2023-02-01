@@ -3,9 +3,9 @@ POST http://localhost:8000/api/menu
 Content-Type: application/json
 
 {
-    "menuName": "Contact",
+    "menuName": "Sign in",
     "link": "/link",
-    "position" : 0
+    "position" : 3
 }
 
 ###

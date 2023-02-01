@@ -8,16 +8,15 @@ exports.getAll = (req, res) => {
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
 
         if (readErr) {
-            return res.json({ status: false, message: readErr })
+            return res.json({ status: false, result: readErr })
         }
         const savedData = JSON.parse(data);
-        return res.json({ status: true, message: savedData })
+        return res.json({ status: true, result: savedData })
     })
 }
 
 
 exports.create = (req, res) => {
-    console.log(req.body);
     const { menuName, link, position } = req.body;
 
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
