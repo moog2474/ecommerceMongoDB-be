@@ -2,7 +2,7 @@ const fs = require("fs");
 const { parse } = require("path");
 const uuid = require("uuid");
 
-const dataFile = process.cwd() + "/data/menu.json"
+const dataFile = process.cwd() + "/data/users.json"
 
 exports.getAll = (req, res) => {
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
@@ -29,7 +29,7 @@ exports.get = (req, res) => {
 
 
 exports.create = (req, res) => {
-    const { menuName, link, position, type } = req.body;
+    const { userName, password, userType, firstName, lastName } = req.body;
 
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
@@ -37,7 +37,7 @@ exports.create = (req, res) => {
         }
 
         const parsedDAta = data ? JSON.parse(data) : [];
-        const newObj = { id: uuid.v4(), menuName, link, position, type };
+        const newObj = { id: uuid.v4(), userName, password, userType, firstName, lastName };
 
         parsedDAta.push(newObj);
 
@@ -51,7 +51,7 @@ exports.create = (req, res) => {
 }
 
 exports.update = (req, res) => {
-    const { id, menuName, link, position, type } = req.body;
+    const { id, userName, password, userType, firstName, lastName } = req.body;
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
             return res.json({ status: false, message: readErr })
@@ -59,7 +59,7 @@ exports.update = (req, res) => {
         const parsedData = JSON.parse(data)
         const updateData = parsedData.map((menuObj) => {
             if (menuObj.id == id) {
-                return { ...menuObj, menuName, link, position, type }
+                return { ...menuObj, userName, password, userType, firstName, lastName }
             }
             else {
                 return menuObj;

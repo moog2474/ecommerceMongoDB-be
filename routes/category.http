@@ -1,0 +1,18 @@
+###
+GET http://localhost:8000/api/category
+
+###
+GET http://localhost:8000/api/category/:id
+
+
+###
+POST http://localhost:8000/api/category
+Content-Type: application/json
+
+{
+    "categoryName": "Gloves",
+    "link": "/link"
+}
+
+###
+DELETE http://localhost:8000/api/category/:id

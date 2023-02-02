@@ -1,0 +1,25 @@
+###
+POST http://localhost:8000/api/users
+Content-Type: application/json
+
+{
+    "userName": "Moog",
+    "firstName": "Moogii",
+    "lastName": "B",
+    "userType": "admin",
+    "password": "moog1234"
+}
+
+###
+GET http://localhost:8000/api/users
+
+###
+GET http://localhost:8000/api/users/5a150972-a873-49d2-a94c-b44e7cf06e71
+
+###
+PUT http://localhost:8000/api/users
+
+###
+DELETE http://localhost:8000/api/users/98565552-6624-4681-903c-454d5e45efe5
+
+

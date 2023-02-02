@@ -3,18 +3,22 @@ POST http://localhost:8000/api/menu
 Content-Type: application/json
 
 {
-    "menuName": "Sign in",
+    "menuName": "Products",
     "link": "/link",
-    "position" : 3
+    "position" : 6,
+    "type": "adminMenu"
 }
 
 ###
 GET http://localhost:8000/api/menu
 
 ###
+GET http://localhost:8000/api/menu/5a150972-a873-49d2-a94c-b44e7cf06e71
+
+###
 PUT http://localhost:8000/api/menu
 
 ###
-DELETE http://localhost:8000/api/menu/2cba9a3b-7b90-4cdc-8f4a-cd8cf0b7c448
+DELETE http://localhost:8000/api/menu/ef2db306-3480-42d5-b38a-cc31d9cb8d8b
 
 
