@@ -9,6 +9,6 @@ router.get("/menu", menu.getAll);
 router.get("/menu/:id", menu.get)
 router.post("/menu", menu.create);
 router.delete("/menu/:id", menu.delete);
-router.put("/menu", menu.update);
+router.put("/menu/:id", menu.update);
 
 module.exports = router; 

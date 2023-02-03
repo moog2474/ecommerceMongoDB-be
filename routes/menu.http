@@ -16,8 +16,16 @@ GET http://localhost:8000/api/menu
 GET http://localhost:8000/api/menu/5a150972-a873-49d2-a94c-b44e7cf06e71
 
 ###
-PUT http://localhost:8000/api/menu
+PUT http://localhost:8000/api/menu/5a150972-a873-49d2-a94c-b44e7cf06e71
+Content-Type: application/json
 
+{
+    "id": "ea21412c-1f26-40ff-8944-4c8e8452e2f1",
+      "menuName": "Contact Us",
+      "link": "/link",
+      "position": 1,
+      "type": "front"
+}
 ###
 DELETE http://localhost:8000/api/menu/ef2db306-3480-42d5-b38a-cc31d9cb8d8b
 
