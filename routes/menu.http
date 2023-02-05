@@ -3,9 +3,9 @@ POST http://localhost:8000/api/menu
 Content-Type: application/json
 
 {
-    "menuName": "Products",
+    "menuName": "asdas",
     "link": "/link",
-    "position" : 6,
+    "position" : 7,
     "type": "adminMenu"
 }
 
