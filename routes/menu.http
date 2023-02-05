@@ -27,6 +27,6 @@ Content-Type: application/json
       "type": "front"
 }
 ###
-DELETE http://localhost:8000/api/menu/ef2db306-3480-42d5-b38a-cc31d9cb8d8b
+DELETE http://localhost:8000/api/menu/7cde590d-6666-4d0e-8ac3-490322311a10
 
 
