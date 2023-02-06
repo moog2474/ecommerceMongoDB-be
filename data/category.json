@@ -1,1 +1,52 @@
-[{"id":"c31ebcfc-3c62-462d-bbac-6bb33314d167","categoryName":"Sweater","link":"/link"},{"id":"d87707bb-d2b7-46de-8038-58166c1dafe9","categoryName":"Shoes","link":"/link"},{"id":"669dc3a4-2f16-40e6-b5f3-9adc8c31062d","categoryName":"T-shirt","link":"/link"},{"id":"de81858a-42cb-4083-ae1a-b9d9eadea306","categoryName":"Trousers","link":"/link"},{"id":"766b4532-49e9-4ca9-9d7d-3f92e6a70dc5","categoryName":"Socks","link":"/link"},{"id":"bfa4e4c5-8f48-44e3-bc4c-8de65622bfbd","categoryName":"Purse","link":"/link"},{"id":"7e1390a7-8bfc-4497-be28-28c13e572fd0","categoryName":"Underpants","link":"/link"},{"id":"3dd6c3fa-0bd5-4826-9344-8a0d61a68dec","categoryName":"Hoodies","link":"/link"},{"id":"39812389-ee22-48b4-bee6-5adff0463a74","categoryName":"Hats","link":"/link"},{"id":"98865d07-9322-4847-b13b-c8e816c26be3","categoryName":"Gloves","link":"/link"}]
+[
+    {
+        "id": "c31ebcfc-3c62-462d-bbac-6bb33314d167",
+        "categoryName": "Sweater",
+        "link": "/link"
+    },
+    {
+        "id": "d87707bb-d2b7-46de-8038-58166c1dafe9",
+        "categoryName": "Shoes",
+        "link": "/link"
+    },
+    {
+        "id": "669dc3a4-2f16-40e6-b5f3-9adc8c31062d",
+        "categoryName": "T-shirt",
+        "link": "/link"
+    },
+    {
+        "id": "de81858a-42cb-4083-ae1a-b9d9eadea306",
+        "categoryName": "Trousers",
+        "link": "/link"
+    },
+    {
+        "id": "766b4532-49e9-4ca9-9d7d-3f92e6a70dc5",
+        "categoryName": "Socks",
+        "link": "/link"
+    },
+    {
+        "id": "bfa4e4c5-8f48-44e3-bc4c-8de65622bfbd",
+        "categoryName": "Purse",
+        "link": "/link"
+    },
+    {
+        "id": "7e1390a7-8bfc-4497-be28-28c13e572fd0",
+        "categoryName": "Underpants",
+        "link": "/link"
+    },
+    {
+        "id": "3dd6c3fa-0bd5-4826-9344-8a0d61a68dec",
+        "categoryName": "Hoodies",
+        "link": "/link"
+    },
+    {
+        "id": "39812389-ee22-48b4-bee6-5adff0463a74",
+        "categoryName": "Hats",
+        "link": "/link"
+    },
+    {
+        "id": "98865d07-9322-4847-b13b-c8e816c26be3",
+        "categoryName": "Gloves",
+        "link": "/link"
+    }
+]

@@ -1,0 +1,47 @@
+###
+POST http://localhost:8000/api/products
+Content-Type: application/json
+
+{
+    "productName": "",
+    "category": "",
+    "price": 100,
+    "thumbnail": ,
+    "image": [],
+    "salesPercentage": 5,
+    "quantity": 30,
+    "createdUser": {},
+    "description": ""
+}
+
+###
+GET http://localhost:8000/api/products
+
+###
+GET http://localhost:8000/api/products/:id
+
+###
+PUT http://localhost:8000/api/products/:id
+Content-Type: application/json
+
+{   
+    "id": "",
+    "categoryId": "",
+    "productName": "",
+    "category": "",
+    "price": 100,
+    "thumbnail": ,
+    "image": [],
+    "salesPercentage": 5,
+    "quantity": 30,
+    "createdUser": { "userName": "dads",
+                    "firstName": "das",
+                    "lastName": "",
+                    "id": "",
+                    },
+    "description": ""
+}
+###
+DELETE http://localhost:8000/api/products/:id
+
+
