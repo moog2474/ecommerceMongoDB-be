@@ -1,0 +1,42 @@
+###
+POST http://localhost:8000/api/products
+Content-Type: application/json
+
+{
+    "productName": "Men's sweater", 
+    "categoryId": "", 
+    "price": 500, 
+    "discount": 20, 
+    "quantity": 30, 
+    "createdUser": "moog", 
+    "description": "this product is ...", 
+    "images": [], 
+    "thumnail": ""
+}
+
+###
+GET http://localhost:8000/api/products
+
+###
+GET http://localhost:8000/api/products/5a150972-a873-49d2-a94c-b44e7cf06e71
+
+###
+PUT http://localhost:8000/api/products/5a150972-a873-49d2-a94c-b44e7cf06e71
+Content-Type: application/json
+
+{
+    "id": "",
+    "productName": "Men's sweater", 
+    "categoryId": "", 
+    "price": 500, 
+    "discount": 20, 
+    "quantity": 30, 
+    "createdUser": "moog", 
+    "description": "this product is ...", 
+    "images": [], 
+    "thumnail": ""
+}
+###
+DELETE http://localhost:8000/api/menu/7cde590d-6666-4d0e-8ac3-490322311a10
+
+

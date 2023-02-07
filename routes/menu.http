@@ -21,10 +21,10 @@ Content-Type: application/json
 
 {
     "id": "ea21412c-1f26-40ff-8944-4c8e8452e2f1",
-      "menuName": "Contact Us",
+      "menuName": "Menu",
       "link": "/link",
       "position": 1,
-      "type": "front"
+      "type": "adminMenu"
 }
 ###
 DELETE http://localhost:8000/api/menu/7cde590d-6666-4d0e-8ac3-490322311a10
