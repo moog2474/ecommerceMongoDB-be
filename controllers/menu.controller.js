@@ -23,7 +23,7 @@ exports.get = (req, res) => {
         const myData = JSON.parse(data)
         const savedData = myData.filter((e) => e.id == id)
 
-        return res.json(savedData)
+        return res.json({ status: true, result: savedData })
     })
 }
 
@@ -51,9 +51,9 @@ exports.create = (req, res) => {
 }
 
 exports.update = (req, res) => {
-    const {id} = req.params
+    const { id } = req.params
     const { menuName, link, position, type } = req.body;
-    
+
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
             return res.json({ status: false, message: readErr })
@@ -61,8 +61,10 @@ exports.update = (req, res) => {
         const parsedData = JSON.parse(data)
         const updateData = parsedData.map((menuObj) => {
             if (menuObj.id == id) {
-                return { ...menuObj,
-                    menuName, link, position, type }
+                return {
+                    ...menuObj,
+                    menuName, link, position, type
+                }
             }
             else {
                 return menuObj;

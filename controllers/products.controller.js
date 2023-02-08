@@ -23,13 +23,13 @@ exports.get = (req, res) => {
         const myData = JSON.parse(data)
         const savedData = myData.filter((e) => e.id == id)
 
-        return res.json(savedData)
+        return res.json({ status: true, result: savedData })
     })
 }
 
 
 exports.create = (req, res) => {
-    const { productName, price, discount, quantity, createdUser, description, images, thumnail } = req.body;
+    const { productName, price, discount, quantity, createdUser, description, images, thumbimage } = req.body;
 
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
@@ -37,7 +37,7 @@ exports.create = (req, res) => {
         }
 
         const parsedDAta = data ? JSON.parse(data) : [];
-        const newObj = { id: uuid.v4(), productName, categoryId: uuid.v4(), price, discount, quantity, createdUser, description, images, thumnail };
+        const newObj = { id: uuid.v4(), productName, categoryId: uuid.v4(), price, discount, quantity, createdUser, description, images, thumbimage };
 
         parsedDAta.push(newObj);
 
@@ -52,7 +52,7 @@ exports.create = (req, res) => {
 
 exports.update = (req, res) => {
     const { id } = req.params
-    const { productName, categoryId, price, discount, quantity, createdUser, description, images, thumnail } = req.body;
+    const { productName, categoryId, price, discount, quantity, createdUser, description, images, thumbimage } = req.body;
 
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
@@ -63,7 +63,7 @@ exports.update = (req, res) => {
             if (menuObj.id == id) {
                 return {
                     ...menuObj,
-                    productName, categoryId, price, discount, quantity, createdUser, description, images, thumnail
+                    productName, categoryId, price, discount, quantity, createdUser, description, images, thumbimage
                 }
             }
             else {

@@ -10,7 +10,7 @@ POST http://localhost:8000/api/category
 Content-Type: application/json
 
 {
-    "categoryName": "Gloves",
+    "categoryName": "Eyepatch",
     "link": "/link"
 }
 

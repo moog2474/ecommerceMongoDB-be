@@ -25,7 +25,7 @@ exports.get = (req, res) => {
         const myData = JSON.parse(data)
         const savedData = myData.filter((e) => e.id == id)
 
-        return res.json(savedData)
+        return res.json({ status: true, result: savedData })
     })
 }
 
