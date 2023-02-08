@@ -13,12 +13,12 @@ const productsRouter = require("./routes/products.route.js")
 app.use(cors())
 app.use(express.json());
 
-app.use("/api", menuRouter)
-app.use("/api", categoryRouter)
-app.use("/api", usersRouter)
-app.use("/api", productsRouter)
+app.use("/be", menuRouter)
+app.use("/be", categoryRouter)
+app.use("/be", usersRouter)
+app.use("/be", productsRouter)
 
-app.get("/api", (req, res) => {
+app.get("/be", (req, res) => {
     res.json({ message: "Welcome to Rest API" })
 })
 
