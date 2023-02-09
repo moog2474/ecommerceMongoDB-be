@@ -27,6 +27,6 @@ Content-Type: application/json
       "type": "adminMenu"
 }
 ###
-DELETE http://localhost:8000/api/menu/7cde590d-6666-4d0e-8ac3-490322311a10
+DELETE http://localhost:8000/be/menu/7cde590d-6666-4d0e-8ac3-490322311a10
 
 

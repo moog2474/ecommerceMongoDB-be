@@ -18,10 +18,10 @@ Content-Type: application/json
 GET http://localhost:8000/be/products
 
 ###
-GET http://localhost:8000/be/products/5a150972-a873-49d2-a94c-b44e7cf06e71
+GET http://localhost:8000/api/products/5a150972-a873-49d2-a94c-b44e7cf06e71
 
 ###
-PUT http://localhost:8000/be/products/5a150972-a873-49d2-a94c-b44e7cf06e71
+PUT http://localhost:8000/api/products/5a150972-a873-49d2-a94c-b44e7cf06e71
 Content-Type: application/json
 
 {
@@ -37,6 +37,6 @@ Content-Type: application/json
     "thumnail": ""
 }
 ###
-DELETE http://localhost:8000/be/menu/7cde590d-6666-4d0e-8ac3-490322311a10
+DELETE http://localhost:8000/api/menu/7cde590d-6666-4d0e-8ac3-490322311a10
 
 
