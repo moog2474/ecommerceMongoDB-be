@@ -1,5 +1,5 @@
 ###
-POST http://localhost:8000/api/users
+POST http://localhost:8000/be/users
 Content-Type: application/json
 
 {
@@ -11,15 +11,15 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8000/api/users
+GET http://localhost:8000/be/users
 
 ###
-GET http://localhost:8000/api/users/5a150972-a873-49d2-a94c-b44e7cf06e71
+GET http://localhost:8000/be/users/5a150972-a873-49d2-a94c-b44e7cf06e71
 
 ###
-PUT http://localhost:8000/api/users
+PUT http://localhost:8000/be/users
 
 ###
-DELETE http://localhost:8000/api/users/98565552-6624-4681-903c-454d5e45efe5
+DELETE http://localhost:8000/be/users/98565552-6624-4681-903c-454d5e45efe5
 
 

@@ -1,12 +1,12 @@
 ###
-GET http://localhost:8000/api/category
+GET http://localhost:8000/be/category
 
 ###
-GET http://localhost:8000/api/category/:id
+GET http://localhost:8000/be/category/:id
 
 
 ###
-POST http://localhost:8000/api/category
+POST http://localhost:8000/be/category
 Content-Type: application/json
 
 {
@@ -15,4 +15,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:8000/api/category/:id
+DELETE http://localhost:8000/be/category/:id

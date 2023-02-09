@@ -1,5 +1,5 @@
 ###
-POST http://localhost:8000/api/menu
+POST http://localhost:8000/be/menu
 Content-Type: application/json
 
 {
@@ -10,13 +10,13 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8000/api/menu
+GET http://localhost:8000/be/menu
 
 ###
-GET http://localhost:8000/api/menu/5a150972-a873-49d2-a94c-b44e7cf06e71
+GET http://localhost:8000/be/menu/5a150972-a873-49d2-a94c-b44e7cf06e71
 
 ###
-PUT http://localhost:8000/api/menu/5a150972-a873-49d2-a94c-b44e7cf06e71
+PUT http://localhost:8000/be/menu/5a150972-a873-49d2-a94c-b44e7cf06e71
 Content-Type: application/json
 
 {
