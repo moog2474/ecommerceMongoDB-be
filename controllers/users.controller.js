@@ -51,18 +51,19 @@ exports.create = (req, res) => {
 }
 
 exports.update = (req, res) => {
-    const { id, userName, password, userType, firstName, lastName } = req.body;
+    const { id } = req.params
+    const { userName, password, userType, firstName, lastName } = req.body;
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
             return res.json({ status: false, message: readErr })
         }
         const parsedData = JSON.parse(data)
-        const updateData = parsedData.map((menuObj) => {
-            if (menuObj.id == id) {
-                return { ...menuObj, userName, password, userType, firstName, lastName }
+        const updateData = parsedData.map((userObj) => {
+            if (userObj.id == id) {
+                return { ...userObj, userName, password, userType, firstName, lastName }
             }
             else {
-                return menuObj;
+                return userObj;
             }
         });
         fs.writeFile(dataFile, JSON.stringify(updateData), (writeErr) => {

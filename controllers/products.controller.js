@@ -59,15 +59,15 @@ exports.update = (req, res) => {
             return res.json({ status: false, message: readErr })
         }
         const parsedData = JSON.parse(data)
-        const updateData = parsedData.map((menuObj) => {
-            if (menuObj.id == id) {
+        const updateData = parsedData.map((productObj) => {
+            if (productObj.id == id) {
                 return {
-                    ...menuObj,
+                    ...productObj,
                     productName, categoryId, price, discount, quantity, createdUser, description, images, thumbimage
                 }
             }
             else {
-                return menuObj;
+                return productObj;
             }
         });
         fs.writeFile(dataFile, JSON.stringify(updateData), (writeErr) => {

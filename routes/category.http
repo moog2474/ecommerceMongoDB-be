@@ -15,4 +15,15 @@ Content-Type: application/json
 }
 
 ###
+PUT http://localhost:8000/be/category/:id
+Content-Type: application/json
+
+{
+    "id": "ea21412c-1f26-40ff-8944-4c8e8452e2f1",
+      "categoryName": "Menu",
+      "link": "/link",
+      "position": 1,
+    
+}
+###
 DELETE http://localhost:8000/be/category/:id
