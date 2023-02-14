@@ -3,7 +3,8 @@ const { parse } = require("path");
 const uuid = require("uuid");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
+const myKey = "123456789!@#$&*";
+
 
 const dataFile = process.cwd() + "/data/users.json"
 
@@ -53,6 +54,7 @@ exports.create = (req, res) => {
             lastName,
             email,
             favoriteProduct: [],
+            createdData: Date.now()
         };
 
         parsedDAta.push(newObj);
@@ -68,15 +70,38 @@ exports.create = (req, res) => {
 
 exports.update = (req, res) => {
     const { id } = req.params
-    const { userName, password, userType, firstName, lastName, email } = req.body;
+    const {
+        userName,
+        password,
+        userType,
+        firstName,
+        lastName,
+        email,
+        favoriteProduct,
+        lastLoginDate
+    } = req.body;
+
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
             return res.json({ status: false, message: readErr })
         }
+
         const parsedData = JSON.parse(data)
+
         const updateData = parsedData.map((userObj) => {
             if (userObj.id == id) {
-                return { ...userObj, userName, password, userType, firstName, lastName, email }
+                return {
+                    ...userObj,
+                    userName,
+                    password,
+                    userType,
+                    firstName,
+                    lastName,
+                    email,
+                    favoriteProduct,
+                    lastLoginDate,
+                    updatedDate: Date.now()
+                }
             }
             else {
                 return userObj;
@@ -97,7 +122,9 @@ exports.delete = (req, res) => {
         if (readErr) {
             return res.json({ status: false, message: readErr })
         }
+
         const parsedDAta = JSON.parse(data);
+
         const deletedData = parsedDAta.filter((e) => e.id != id);
 
         fs.writeFile(dataFile, JSON.stringify(deletedData), (writeErr) => {
@@ -127,8 +154,8 @@ exports.login = (req, res) => {
         const parsedData = data ? JSON.parse(data) : [];
         let user;
         for (let i = 0; i < parsedData.length; i++) {
-            if (email == parsedData[i].email) {
-                const decrypt = await bcrypt.compare(password, parsedData[i].password);
+            if (email == parsedData[i].email || userName == parsedData[i].userName) {
+                const decrypt = await bcrypt.compare(password + myKey, parsedData[i].password);
 
                 if (decrypt) {
                     user = {
@@ -142,6 +169,7 @@ exports.login = (req, res) => {
             }
         }
 
+        console.log(user);
         if (user) {
             return res.json({
                 status: true,
