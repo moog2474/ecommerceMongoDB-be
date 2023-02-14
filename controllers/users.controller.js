@@ -1,6 +1,9 @@
 const fs = require("fs");
 const { parse } = require("path");
 const uuid = require("uuid");
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+const myPlaintextPassword = 's0/\/\P4$$w0rD';
 
 const dataFile = process.cwd() + "/data/users.json"
 
@@ -14,6 +17,7 @@ exports.getAll = (req, res) => {
         return res.json({ status: true, result: savedData })
     })
 }
+
 exports.get = (req, res) => {
     const { id } = req.params
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
@@ -29,15 +33,27 @@ exports.get = (req, res) => {
 
 
 exports.create = (req, res) => {
-    const { userName, password, userType, firstName, lastName } = req.body;
+    const { userName, password, userType, firstName, lastName, email, } = req.body;
 
-    fs.readFile(dataFile, "utf-8", (readErr, data) => {
+    fs.readFile(dataFile, "utf-8", async (readErr, data) => {
         if (readErr) {
             return res.json({ status: false, message: readErr })
         }
 
         const parsedDAta = data ? JSON.parse(data) : [];
-        const newObj = { id: uuid.v4(), userName, password, userType, firstName, lastName };
+
+        const newPassword = bcrypt.hash(password, saltRounds)
+
+        const newObj = {
+            id: uuid.v4(),
+            userName,
+            password: newPassword,
+            userType,
+            firstName,
+            lastName,
+            email,
+            favoriteProduct: [],
+        };
 
         parsedDAta.push(newObj);
 
@@ -52,7 +68,7 @@ exports.create = (req, res) => {
 
 exports.update = (req, res) => {
     const { id } = req.params
-    const { userName, password, userType, firstName, lastName } = req.body;
+    const { userName, password, userType, firstName, lastName, email } = req.body;
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
             return res.json({ status: false, message: readErr })
@@ -60,7 +76,7 @@ exports.update = (req, res) => {
         const parsedData = JSON.parse(data)
         const updateData = parsedData.map((userObj) => {
             if (userObj.id == id) {
-                return { ...userObj, userName, password, userType, firstName, lastName }
+                return { ...userObj, userName, password, userType, firstName, lastName, email }
             }
             else {
                 return userObj;
@@ -91,4 +107,51 @@ exports.delete = (req, res) => {
             return res.json({ status: true, result: deletedData })
         })
     })
+}
+
+exports.login = (req, res) => {
+
+    const { userName, password, email } = req.body;
+
+    if (!userName || !email || !password)
+        return res.json({
+            status: false,
+            message: "medeellee bvren buglunu vv"
+        });
+
+    fs.readFile(dataFile, "utf-8", async (readErr, data) => {
+        if (readErr) {
+            return res.json({ staus: false, message: readErr })
+        }
+
+        const parsedData = data ? JSON.parse(data) : [];
+        let user;
+        for (let i = 0; i < parsedData.length; i++) {
+            if (email == parsedData[i].email) {
+                const decrypt = await bcrypt.compare(password, parsedData[i].password);
+
+                if (decrypt) {
+                    user = {
+                        id: parsedData[i].id,
+                        email: parsedData[i].email,
+                        lastname: parsedData[i].lastname,
+                        firstname: parsedData[i].firstname,
+                    };
+                    break;
+                }
+            }
+        }
+
+        if (user) {
+            return res.json({
+                status: true,
+                result: user,
+            })
+        } else {
+            return res.json({
+                status: false,
+                message: "Tanii email eswel nuuts ug buruu bna",
+            });
+        }
+    });
 }
