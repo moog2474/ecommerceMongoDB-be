@@ -1,5 +1,4 @@
 const fs = require("fs");
-const { parse } = require("path");
 const uuid = require("uuid");
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -34,7 +33,7 @@ exports.get = (req, res) => {
 
 
 exports.create = (req, res) => {
-    const { userName, password, userType, firstName, lastName, email, } = req.body;
+    const { userName, password, userType, firstName, lastName, email } = req.body;
 
     fs.readFile(dataFile, "utf-8", async (readErr, data) => {
         if (readErr) {
@@ -43,7 +42,8 @@ exports.create = (req, res) => {
 
         const parsedDAta = data ? JSON.parse(data) : [];
 
-        const newPassword = bcrypt.hash(password, saltRounds)
+        const newPassword = await bcrypt.hash(password + myKey, saltRounds)
+        console.log(newPassword);
 
         const newObj = {
             id: uuid.v4(),
@@ -138,9 +138,9 @@ exports.delete = (req, res) => {
 
 exports.login = (req, res) => {
 
-    const { userName, password, email } = req.body;
+    const { password, email } = req.body;
 
-    if (!userName || !email || !password)
+    if (!email || !password)
         return res.json({
             status: false,
             message: "medeellee bvren buglunu vv"
@@ -154,15 +154,16 @@ exports.login = (req, res) => {
         const parsedData = data ? JSON.parse(data) : [];
         let user;
         for (let i = 0; i < parsedData.length; i++) {
-            if (email == parsedData[i].email || userName == parsedData[i].userName) {
+            if (email == parsedData[i].email) {
+
                 const decrypt = await bcrypt.compare(password + myKey, parsedData[i].password);
 
                 if (decrypt) {
                     user = {
                         id: parsedData[i].id,
                         email: parsedData[i].email,
-                        lastname: parsedData[i].lastname,
-                        firstname: parsedData[i].firstname,
+                        lastName: parsedData[i].lastName,
+                        firstName: parsedData[i].firstName,
                     };
                     break;
                 }

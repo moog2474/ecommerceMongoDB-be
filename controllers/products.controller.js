@@ -29,7 +29,7 @@ exports.get = (req, res) => {
 
 
 exports.create = (req, res) => {
-    const { productName, price, discount, quantity, createdUser, description, images, thumbimage } = req.body;
+    const { productName, price, discount, quantity, category, createdUser, description, images, thumbimage } = req.body;
 
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
@@ -37,7 +37,7 @@ exports.create = (req, res) => {
         }
 
         const parsedDAta = data ? JSON.parse(data) : [];
-        const newObj = { id: uuid.v4(), productName, categoryId: uuid.v4(), price, discount, quantity, createdUser, description, images, thumbimage };
+        const newObj = { id: uuid.v4(), productName, categoryId: uuid.v4(), price, category, discount, quantity, createdUser, description, images, thumbimage };
 
         parsedDAta.push(newObj);
 
@@ -52,7 +52,7 @@ exports.create = (req, res) => {
 
 exports.update = (req, res) => {
     const { id } = req.params
-    const { productName, categoryId, price, discount, quantity, createdUser, description, images, thumbimage } = req.body;
+    const { productName, categoryId, price, discount, category, quantity, createdUser, description, images, thumbimage } = req.body;
 
     fs.readFile(dataFile, "utf-8", (readErr, data) => {
         if (readErr) {
@@ -63,7 +63,7 @@ exports.update = (req, res) => {
             if (productObj.id == id) {
                 return {
                     ...productObj,
-                    productName, categoryId, price, discount, quantity, createdUser, description, images, thumbimage
+                    productName, categoryId, price, discount, category, quantity, createdUser, description, images, thumbimage
                 }
             }
             else {

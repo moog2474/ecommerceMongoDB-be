@@ -26,4 +26,4 @@ Content-Type: application/json
     
 }
 ###
-DELETE http://localhost:8000/be/category/:id
+DELETE http://localhost:8000/be/category/3dd6c3fa-0bd5-4826-9344-8a0d61a68dec
