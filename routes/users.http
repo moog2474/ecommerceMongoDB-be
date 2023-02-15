@@ -8,7 +8,7 @@ Content-Type: application/json
     "lastName": "B",
     "email": "moog@gmail.com",
     "userType": "admin",
-    "password": "moog1234"
+    "password": "moog"
 }
 
 ###
@@ -21,7 +21,7 @@ GET http://localhost:8000/be/users/5a150972-a873-49d2-a94c-b44e7cf06e71
 PUT http://localhost:8000/be/users/
 
 ###
-DELETE http://localhost:8000/be/users/98565552-6624-4681-903c-454d5e45efe5
+DELETE http://localhost:8000/be/users/7037f197-9240-4909-93af-feb2b3877c91
 
 
 ###
@@ -29,6 +29,6 @@ POST http://localhost:8000/be/users/login
 Content-Type: application/json
 
 {
-    "email": "moogii@yahoo.com",
-    "password": "Moog1234$"
+    "email": "moog@gmail.com",
+    "password": "moog"
 }
