@@ -1,27 +1,28 @@
 const express = require("express");
-const cors = require("cors");
-const app = express();
+const mongoose = require("mongoose");
+
 const port = 8000;
-const fs = require("fs");
 
+const app = express();
 
-const menuRouter = require("./routes/menu.route.js")
-const categoryRouter = require("./routes/category.route.js")
+const MONGO_CONNECTION_STRING = `mongodb+srv://moog:ioLvbZV2fbJj9MpR@e-commerce.hdmohbc.mongodb.net/test`
+mongoose.connect(MONGO_CONNECTION_STRING)
+.then(()=> console.log(`Database connected successfully`))
+.catch(err=> console.log(err))
+
 const usersRouter = require("./routes/users.route.js")
-const productsRouter = require("./routes/products.route.js")
-const articleRouter = require("./routes/article.route.js")
 
-app.use(cors())
+
+
 app.use(express.json());
 
-app.use("/be", menuRouter)
-app.use("/be", categoryRouter)
 app.use("/be", usersRouter)
-app.use("/be", productsRouter)
-app.use("/be", articleRouter)
 
 app.get("/be", (req, res) => {
-    res.json({ message: "Welcome to Rest API" })
+    res.send( '<h1>Hello MongoDB from NodeJS</h1>')
 })
 
-app.listen(port, () => console.log("server is running"))
+
+app.listen(port, () => {  
+    console.log(`Express Application is running on http://localhost:${port}`)
+})
