@@ -1,4 +1,11 @@
 ###
+GET  http://localhost:8000/be/users
+###
+
+###
+GET http://localhost:8000/be/users/6419309ed88a96f0ebc56ccb
+
+###
 POST http://localhost:8000/be/users
 Content-Type: application/json
 
@@ -9,7 +16,28 @@ Content-Type: application/json
         "email": "moog@gmail.com",
         "password": "moog1234",
         "userType": "admin",
-        "favoriteProduct": "",
+        "favoriteProduct": ["Shoes", "T-shirt"],
         "lastLoginDate": "",
         "updatedDate": ""
 }
+
+
+###
+PUT http://localhost:8000/api/users/6419309ed88a96f0ebc56ccb
+Content-Type: application/json
+
+{
+        "firstName": "moog",
+        "lastName": "bat",
+        "userName": "moog", 
+        "email": "moog@gmail.com",
+        "password": "moog1234",
+        "userType": "admin",
+        "favoriteProduct": ["Shoes", "T-shirt"],
+        "lastLoginDate": "",
+        "updatedDate": ""
+}
+
+
+###
+DELETE http://localhost:8000/api/users/6419309ed88a96f0ebc56ccb

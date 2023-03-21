@@ -1,17 +1,14 @@
-const express = require("express");
-const Users = require("../models/users.model");
-const router = express.Router();
+const { Router } = require("express");
+const users = require("../controllers/users.controllers");
 
+const route = Router();
 
-router.post("/users", async (req, res) =>{
-    const body = req.body;
-    const newUser = new Users(body);
-    const result = await newUser.save();
+route.get("/users", users.getAll);
+route.get("/users/:_id", users.getOne);
+route.post("/users/", users.createUser);
+route.put("/users/:_id", users.updateUser);
+route.delete("/users/:_id", users.deleteUser);
 
-    res.json({
-        data: result
-    });
-});
+module.exports = route;
 
-
-module.exports = router; 
+// MONGO_DB_URI = "mongodb+srv://moog:sUKxbzbZ1tilhIMV@e-commerce.hdmohbc.mongodb.net/test"

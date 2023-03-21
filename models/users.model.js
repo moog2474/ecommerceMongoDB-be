@@ -16,23 +16,19 @@ const usersSchema = new mongoose.Schema (
             type: String,
             unique: true
         },
-        userType: {
-            type: String
-        },
-        favoriteProduct: {
-            type: String
-        },
+        userType: String,
+        favoriteProduct: [String],
         lastLoginDate: {
-            type: Date(),
+            type: Date,
             default: Date.now
         },
         updatedDate:{
-            type: Date()
+            type: Date
         }
     },
-    {collection: 'users'}
+    {collection: 'clUsers'}
 );
 
-const users = mongoose.model("users", usersSchema);
+const Users = mongoose.model("Users", usersSchema);
 
-module.exports = users;
+module.exports = Users;
