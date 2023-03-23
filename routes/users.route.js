@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const users = require("../controllers/users.controllers");
+const users = require("../controllers/users.controller");
 const auth = require("../middleware/auth")
 
 const route = Router();
@@ -12,5 +12,3 @@ route.post("/login", users.login);
 route.post("/signup", users.register)
 
 module.exports = route;
-
-// MONGO_DB_URI = "mongodb+srv://moog:sUKxbzbZ1tilhIMV@e-commerce.hdmohbc.mongodb.net/test"

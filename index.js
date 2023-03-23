@@ -27,3 +27,20 @@ app.get("/be", (req, res) => {
 app.listen(port, () => {  
     console.log(`Express Application is running on http://localhost:${port}`)
 })
+
+
+
+
+
+
+// MONGO_DB_URI = mongodb+srv://moog:ZGmlISoXdOD9m52S@e-commerce.hdmohbc.mongodb.net/e-commerce;
+// TOKEN_SECRET_KEY= ABCDEFG!@#$%^&;
+// PORT = 8000;
+
+
+
+
+
+
+
+
