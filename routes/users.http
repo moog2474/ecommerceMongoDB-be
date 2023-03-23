@@ -1,43 +1,14 @@
 ###
-GET  http://localhost:8000/be/users
-###
-
-###
-GET http://localhost:8000/be/users/6419309ed88a96f0ebc56ccb
-
-###
-POST http://localhost:8000/be/users
+POST http://localhost:8000/be/signup
 Content-Type: application/json
 
 {
-        "firstName": "moog",
-        "lastName": "bat",
-        "userName": "moog", 
+        "fisrtName": "moog",
+        "lastName": "braynt",
+        "userName": "Moog9000",
         "email": "moog@gmail.com",
-        "password": "moog1234",
-        "userType": "admin",
-        "favoriteProduct": ["Shoes", "T-shirt"],
-        "lastLoginDate": "",
-        "updatedDate": ""
+        "password": "qwerty",
+        "userType": "user",
+        "favoriteProduct": ["shoes", "shirt"],
+        "lastLoginDate": ""
 }
-
-
-###
-PUT http://localhost:8000/api/users/6419309ed88a96f0ebc56ccb
-Content-Type: application/json
-
-{
-        "firstName": "moog",
-        "lastName": "bat",
-        "userName": "moog", 
-        "email": "moog@gmail.com",
-        "password": "moog1234",
-        "userType": "admin",
-        "favoriteProduct": ["Shoes", "T-shirt"],
-        "lastLoginDate": "",
-        "updatedDate": ""
-}
-
-
-###
-DELETE http://localhost:8000/api/users/6419309ed88a96f0ebc56ccb

@@ -40,7 +40,7 @@ exports.getOne = async(req, res) =>{
 }
 
 exports.register = async (req, res) => {
-    const { email, password } = req.body;
+    const { firstName, lastName, userName, email, password } = req.body;
   
     if (!email || !password) {
       res
@@ -52,8 +52,12 @@ exports.register = async (req, res) => {
     const hashedPass = await bcrypt.hash(password, 10);
     if (hashedPass) {
       const newUser = new Users({
+        firstName,
+        lastName,
+        userName,
         email,
         password: hashedPass,
+
       });
   
       const result = await newUser.save();

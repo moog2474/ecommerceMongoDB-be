@@ -18,5 +18,13 @@
     "mongoose": "^7.0.2",
     "nodemon": "^2.0.22",
     "uuid": "^9.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moog2474/ecommerceMongoDB-be.git"
+  },
+  "bugs": {
+    "url": "https://github.com/moog2474/ecommerceMongoDB-be/issues"
+  },
+  "homepage": "https://github.com/moog2474/ecommerceMongoDB-be#readme"
 }
