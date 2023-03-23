@@ -26,7 +26,7 @@ const usersSchema = new mongoose.Schema (
             type: Date
         }
     },
-    {collection: 'clUsers'}
+    {collection: 'Users'}
 );
 
 const Users = mongoose.model("Users", usersSchema);
