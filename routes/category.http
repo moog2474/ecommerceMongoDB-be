@@ -1,0 +1,9 @@
+###
+POST http://localhost:8000/be/category
+Content-Type: application/json
+x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MWNmZWM2YjQ4NWJmMmVlOWI3YjEwZCIsImxhc3ROYW1lIjoiYnJheW50IiwidXNlck5hbWUiOiJNb29nOTAwIiwiZW1haWwiOiJtb29nMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRQdXB2eDUzUVZ3M3hiRkpsOGNhL1VlTU9WMXNnQ3FRLzNWVER6QnhPMXludVU0cDNYbm1NbSIsImZhdm9yaXRlUHJvZHVjdCI6W10sImxhc3RMb2dpbkRhdGUiOiIyMDIzLTAzLTI0VDAxOjM3OjEwLjg3M1oiLCJfX3YiOjB9LCJpYXQiOjE2Nzk2MjE4NjksImV4cCI6MTY3OTYyOTA2OX0.N-yQzk3vh1YheDdiMZeuMs-B8vlTHYpQAEqykrI1JtM
+
+{
+        "categoryName": "Shoes",
+        "link": "https://www.google.com"
+}

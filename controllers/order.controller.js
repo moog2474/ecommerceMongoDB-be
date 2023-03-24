@@ -1,8 +1,11 @@
-const Category = require("../models/category.model");
+const Order = require("../models/order.model");
 
 exports.getAll = async (req, res) =>{
     try{
-        const result = await Category.find({})
+        const result = await Order.find({}).populate([
+            {path: "customerId", select: "userName"},
+            {path: "orderDetails.productId", select: "_id"}
+        ])
         res.json({status: true, result})
     } catch(err){
         res.json({status: false, message: err})
@@ -13,16 +16,19 @@ exports.getOne = async(req, res) =>{
     const {_id} = req.params;
 
     try{
-        const result = await Category.find({_id})
+        const result = await Order.find({_id}).populate([
+            {path: "customerId", select: "userName"},
+            {path: "orderDetails.productId", select: "_id"}])
+            
         res.json({status: true, result})
     } catch(err){
         res.json({status: true, message: err})
     }
 }
 
-exports.createCategory = async(req, res) =>{
+exports.createOrder = async(req, res) =>{
     try{
-        const result= await Category.create(req.body)
+        const result= await Order.create(req.body)
         res.json({status: true, result})
     } catch(err){
         res.json({status: false, message: err})
@@ -30,21 +36,21 @@ exports.createCategory = async(req, res) =>{
 }
 
 
-exports.updateCategory = async (req,res)=>{
+exports.updateOrder = async (req,res)=>{
     const {_id} = req.params
     try {
-        const result = await Category.findByIdAndUpdate({_id})
+        const result = await Order.findByIdAndUpdate({_id})
         res.json({status: true, result})
     } catch(err){
         res.json({status: false, message: err})
     }
 }
 
-exports.deleteCategory = async (req, res)=>{
+exports.deleteOrder = async (req, res)=>{
     const {_id} = req.params
   
 try{
-    const result = await Category.findByIdAndDelete({_id})
+    const result = await Order.findByIdAndDelete({_id})
     res.json({ status: true, result})
 } catch(err){
     res.json({status: false, message: err})

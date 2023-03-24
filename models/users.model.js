@@ -1,4 +1,4 @@
-const {default: mongoose} = require("mongoose");
+const {default: mongoose, Schema} = require("mongoose");
 
 const usersSchema = new mongoose.Schema (
     {
@@ -16,7 +16,7 @@ const usersSchema = new mongoose.Schema (
             type: String,
             unique: true
         },
-        userType: String,
+        userType: {type: Schema.Types.Mixed, enum: ["Admin","Customer"]},
         favoriteProduct: [String],
         lastLoginDate: {
             type: Date,
