@@ -3,10 +3,17 @@ POST http://localhost:8000/be/signup
 Content-Type: application/json
 
 {
+<<<<<<< HEAD
         "fisrtName": "moog1",
         "lastName": "braynt",
         "userName": "Moog900",
         "email": "moog1@gmail.com",
+=======
+        "fisrtName": "naruto",
+        "lastName": "braynt",
+        "userName": "Mha000",
+        "email": "moo243@gmail.com",
+>>>>>>> 5091706254d82a4181ab61401d3b9fe940c20f34
         "password": "qwerty",
         "userType": "user",
         "favoriteProduct": ["shoes", "shirt"],

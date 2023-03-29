@@ -4,7 +4,7 @@ const jwt = require("jsonwebtoken")
 
 
 exports.getAll = async (req, res) =>{
-  const result = await Users.find({});
+  const result = await Users.find ({});
 
   if(result){
     res.status(200).send({
