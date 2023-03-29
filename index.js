@@ -11,12 +11,8 @@ const usersRouter = require("./routes/users.route.js")
 const productsRouter = require("./routes/products.route.js")
 const categoryRouter = require("./routes/category.route.js")
 const brandRouter = require("./routes/brand.route.js")
-<<<<<<< HEAD
 const orderRouter = require("./routes/order.route.js")
 const menuRouter = require("./routes/menu.route.js")
-=======
-
->>>>>>> 5091706254d82a4181ab61401d3b9fe940c20f34
 
 const port = process.env.PORT;
 mongoose
@@ -31,12 +27,9 @@ app.use("/be", usersRouter)
 app.use("/be", categoryRouter)
 app.use("/be", productsRouter)
 app.use("/be", brandRouter)
-<<<<<<< HEAD
 app.use("/be", orderRouter)
 app.use("/be", menuRouter)
 
-=======
->>>>>>> 5091706254d82a4181ab61401d3b9fe940c20f34
 
 app.get("/be", (req, res) => {
     res.send('<h1>Hello MongoDB from NodeJS</h1>')
