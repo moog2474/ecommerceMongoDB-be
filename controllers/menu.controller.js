@@ -1,11 +1,8 @@
-const Order = require("../models/order.model");
+const Menu = require("../models/menu.model");
 
 exports.getAll = async (req, res) =>{
     try{
-        const result = await Order.find({}).populate([
-            {path: "customerId", select: "userName"},
-            {path: "orderDetails.productId", select: "_id"}
-        ])
+        const result = await Menu.find({})
         res.json({status: true, result})
     } catch(err){
         res.json({status: false, message: err})
@@ -16,19 +13,16 @@ exports.getOne = async(req, res) =>{
     const {_id} = req.params;
 
     try{
-        const result = await Order.find({_id}).populate([
-            {path: "customerId", select: "userName"},
-            {path: "orderDetails.productId", select: "_id"}])
-            
+        const result = await Menu.find({_id})
         res.json({status: true, result})
     } catch(err){
         res.json({status: true, message: err})
     }
 }
 
-exports.createOrder = async(req, res) =>{
+exports.createMenu = async(req, res) =>{
     try{
-        const result= await Order.create(req.body)
+        const result= await Menu.create(req.body)
         res.json({status: true, result})
     } catch(err){
         res.json({status: false, message: err})
@@ -36,21 +30,21 @@ exports.createOrder = async(req, res) =>{
 }
 
 
-exports.updateOrder = async (req,res)=>{
+exports.updateMenu = async (req,res)=>{
     const {_id} = req.params
     try {
-        const result = await Order.findByIdAndUpdate({_id}, req.body)
+        const result = await Menu.findByIdAndUpdate({_id}, req.body)
         res.json({status: true, result})
     } catch(err){
         res.json({status: false, message: err})
     }
 }
 
-exports.deleteOrder = async (req, res)=>{
+exports.deleteMenu = async (req, res)=>{
     const {_id} = req.params
   
 try{
-    const result = await Order.findByIdAndDelete({_id})
+    const result = await Menu.findByIdAndDelete({_id})
     res.json({ status: true, result})
 } catch(err){
     res.json({status: false, message: err})

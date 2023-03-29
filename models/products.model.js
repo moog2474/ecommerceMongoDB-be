@@ -16,7 +16,7 @@ const productsSchema = new mongoose.Schema (
         },
         description: String,
         thumbImage: String,
-        images: String,
+        images: [String],
         createdAdmin: {
             type: Schema.Types.ObjectId,
             ref: "Users"

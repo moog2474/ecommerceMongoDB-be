@@ -3,12 +3,22 @@ POST http://localhost:8000/be/signup
 Content-Type: application/json
 
 {
-        "fisrtName": "moog",
+        "fisrtName": "moog1",
         "lastName": "braynt",
-        "userName": "Moog9000",
-        "email": "moog@gmail.com",
+        "userName": "Moog900",
+        "email": "moog1@gmail.com",
         "password": "qwerty",
         "userType": "user",
         "favoriteProduct": ["shoes", "shirt"],
         "lastLoginDate": ""
+}
+
+
+###
+POST http://localhost:8000/be/login
+Content-Type: application/json
+
+{
+        "email": "moog1@gmail.com",
+        "password": "qwerty"
 }

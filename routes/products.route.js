@@ -4,8 +4,8 @@ const auth = require("../middleware/auth")
 
 const route = Router();
 
-route.get("/products", auth, products.getAll);
-route.get("/products/:_id", auth, products.getOne);
+route.get("/products", products.getAll);
+route.get("/products/:_id", products.getOne);
 route.post("/products", auth, products.createProduct)
 route.put("/products/:_id", auth, products.updateProduct);
 route.delete("/products/:_id", auth, products.deleteProduct);

@@ -8,7 +8,7 @@ const orderSchema = new mongoose.Schema (
         shippedDate: Date,
         status: String,
         comments: String,
-        customerNumber: {
+        customerId: {
             type: Schema.Types.ObjectId,
             ref: "Users"
         },

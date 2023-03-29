@@ -1,20 +1,11 @@
 ###
-POST http://localhost:8000/be/products
+POST http://localhost:8080/be/menu
 Content-Type: application/json
 x-access-token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjY0MWNmZWM2YjQ4NWJmMmVlOWI3YjEwZCIsImxhc3ROYW1lIjoiYnJheW50IiwidXNlck5hbWUiOiJNb29nOTAwIiwiZW1haWwiOiJtb29nMUBnbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRQdXB2eDUzUVZ3M3hiRkpsOGNhL1VlTU9WMXNnQ3FRLzNWVER6QnhPMXludVU0cDNYbm1NbSIsImZhdm9yaXRlUHJvZHVjdCI6W10sImxhc3RMb2dpbkRhdGUiOiIyMDIzLTAzLTI0VDAxOjM3OjEwLjg3M1oiLCJfX3YiOjB9LCJpYXQiOjE2Nzk2MjE4NjksImV4cCI6MTY3OTYyOTA2OX0.N-yQzk3vh1YheDdiMZeuMs-B8vlTHYpQAEqykrI1JtM
 
 {
-        "productName": "moog",
-        "price": 500,
-        "inStock": 100,
-        "discount": 0,
-        "productCode": "S10_2351",
-        "brandId": "1234",
-        "categoryId": "edasq231easdasda",
-        "description": "adsadawadwad asdw",
-        "thumbImage": "www.google.com",
-        "images": ["cloud/images/anidjkwaadn2$d", "cloud/images/anidjkwaadn2$d", "cloud/images/anidjkwaadn2$d"],
-        "createdUser": "ada"
+    "menuName": "Dashboard",
+    "link": "/link"
 
 }
 
@@ -33,14 +24,5 @@ PUT http://localhost:8000/be/localhost:8000/be/products/:_id
 Content-Type: application/json
 
 {
-        "productName": "moog",
-        "price": 500,
-        "inStock": 100,
-        "discount": 0,
-        "productCode": "S10_2351",
-        "categoryId": "",
-        "description": "adsadawadwad asdw",
-        "thumbImage": "",
-        "images": ["", "", ""],
-        "createdUser": "ada"
+
 }

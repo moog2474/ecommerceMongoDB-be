@@ -41,7 +41,7 @@ exports.createProduct = async(req, res) =>{
 exports.updateProduct = async (req,res)=>{
     const {_id} = req.params
     try {
-        const result = await Products.findByIdAndUpdate({_id})
+        const result = await Products.findByIdAndUpdate({_id}, req.body)
         res.json({status: true, result})
     } catch(err){
         res.json({status: false, message: err})

@@ -3,12 +3,11 @@ const {default: mongoose} = require("mongoose");
 const brandSchema = new mongoose.Schema (
     {
         brandName: {type: String, unique: true},
-        
         link: String
     },
-    {collection: 'Category'}
+    {collection: 'Brand'}
 );
 
-const Category = mongoose.model("Category", brandSchema);
+const Brand = mongoose.model("Brand", brandSchema);
 
-module.exports = Category;
+module.exports = Brand;
